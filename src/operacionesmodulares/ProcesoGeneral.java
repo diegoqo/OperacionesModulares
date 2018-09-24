@@ -20,6 +20,10 @@ public class ProcesoGeneral {
                     Entradas entradaMultiplicacion = new Entradas();
                     entradaMultiplicacion.Entrada1(3);
                     break;
+                case 4:
+                    Entradas entradaDivision = new Entradas();
+                    entradaDivision.Entrada1(4);
+                    break;
                 default:
                     System.out.println("Entrada no valida \n\n");
                     ProcesoGeneral procesoGeneral = new ProcesoGeneral();

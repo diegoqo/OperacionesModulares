@@ -7,7 +7,8 @@ import java.util.Optional;
 public enum OperacionesEnum {
     SUMA("1", "suma"),
     RESTA("2", "resta"),
-    MULTIPLICACION("3", "multiplicación");
+    MULTIPLICACION("3", "multiplicación"),
+    DIVISION("4", "división");
 
     private final String id;
     private final String descripcion;

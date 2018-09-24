@@ -17,7 +17,8 @@ public class Entradas {
         System.out.println("-------------------------\n");
         System.out.println("1 - Suma");
         System.out.println("2 - Resta");
-        System.out.println("3 - Multiplicación\n\n");
+        System.out.println("3 - Multiplicación");
+        System.out.println("4 - División\n\n");
         System.out.println("Ingrese el número de la operación: ");
 
         Scanner scanner = new Scanner(System.in);
@@ -78,6 +79,28 @@ public class Entradas {
                 int resultado = multiplicacion.Multiplicar(a, b, z, descripcionOperacion);
                 System.out.println("-------------------> Resultado <------------------- \n");
                 System.out.println(a +" " + descripcionOperacion+ " modular " + b + " = " + resultado);
+            }
+            else if(descripcionOperacion.equals("división")){
+                Multiplicacion multiplicacionReciproco = new Multiplicacion();
+                int resultadoReciproco = multiplicacionReciproco.MultiplicarReciproco(b, z);
+                if(resultadoReciproco != -1){
+                    System.out.println("---------* El reciproco de "+ b +" es: "+ resultadoReciproco +" *---------\n");
+                    Multiplicacion multiplicacionAConReciproco = new Multiplicacion();
+                    System.out.println(a +" " + descripcionOperacion+ " modular " + b + " = " +
+                             a +" multiplicación modular "+ resultadoReciproco);
+                    int resultadoAConReciproco = multiplicacionAConReciproco.Multiplicar(
+                            a,resultadoReciproco,z,descripcionOperacion);
+                    System.out.println("---------* "+ a +" multiplicación modular "+ resultadoReciproco + " = " +
+                            resultadoAConReciproco + " *---------\n\n");
+                    System.out.println("-------------------> Resultado <------------------- \n");
+                    System.out.println(a +" " + descripcionOperacion+ " modular " + b + " = " + resultadoAConReciproco);
+                }
+                else{
+                    System.out.println("\033[0;1m"+"-------------------> Resultado <------------------- \n");
+                    System.out.println(b +" no tiene un elemento invertible dentro de Zn = "+ z +" por lo cual la división" +
+                            " no tiene solución");
+                }
+
             }
         }
         else{
